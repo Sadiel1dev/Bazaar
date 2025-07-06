@@ -1,0 +1,35 @@
+<div class="div">
+    <header class="header active"  data-header>
+        <nav class="navbar container">
+          <a href="#" class="brand">DevsBazaar</a>
+          <div class="burger" id="burger">
+             <span class="burger-line"></span>
+             <span class="burger-line"></span>
+             <span class="burger-line"></span>
+          </div>
+          <div class="menu" id="menu">
+             <ul class="menu-inner">
+                <li class="menu-item"><a href="#" class="menu-link">Negocios</a></li>
+                <li class="menu-item"><a href="#" class="menu-link">Servicios</a></li>
+                <li class="menu-item"><a  class="menu-link">Contacto</a></li>
+                <li class="menu-item"><a [routerLink]="['/tienda/carrito']" routerLinkActive="router-link-active"  class="menu-link carrito"> <i class='bx bx-cart'></i> </a></li>
+             </ul>
+          </div>
+          <a *ngIf="(currentUser$ | async)?.displayName == null" [routerLink]="['/login']" routerLinkActive="router-link-active"   class="menu-block">Unirse</a>
+          <ng-container *ngIf="(currentUser$ | async)?.displayName != null">
+           
+            <div class="dropdown">
+               <button class="button">
+                  <a style="color: #fff;">Hola, {{(currentUser$ | async)?.displayName}}</a>
+                 <img src="assets/svg/chevron.svg" />
+               </button>
+               <div class="dropdown-menu">
+                 <button (click)="logout()">Desconectar</button>
+               </div>
+             </div>
+          </ng-container>
+       </nav>
+      </header>
+    
+      <router-outlet></router-outlet>
+</div>

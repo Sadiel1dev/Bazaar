@@ -1,0 +1,48 @@
+<section class="contenedor">
+    <div class="imagen">
+        <img src="{{producto.pictureUrl}}" alt="">
+    </div>
+    <div class="letras">
+        <h3 class="compania">DEVS BAZAAR</h3>
+        <h2 class="titulo">
+            {{producto.name}}
+        </h2>
+        <p class="descripcion">
+            {{producto.description}} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum facilis ullam molestiae. Doloribus esse nobis eos illo accusamus, sequi suscipit fugit libero quidem ut, ab quas, molestiae veritatis soluta? Sint.
+        </p>
+        <div class="precio">
+            <div class="flex">
+                <span class="actual">
+                    ${{producto.price}} CUP
+                </span>
+                <span class="rebaja">
+                    50%
+                </span>
+            </div>
+            <div class="anterior">
+                $200
+            </div>
+        </div>
+        
+        <div class="botones">
+            <p-inputNumber 
+            [(ngModel)]="value3" 
+            [showButtons]="true" 
+            buttonLayout="horizontal" 
+            inputId="horizontal" 
+            spinnerMode="horizontal" 
+            [step]="1"
+            decrementButtonClass="p-button-danger"
+            incrementButtonClass="p-button-success"
+            incrementButtonIcon="pi pi-plus" 
+            decrementButtonIcon="pi pi-minus"
+            [min]="1" 
+            [max]="15" />
+
+            <a (click)="AddCar()" style="cursor: pointer;" class="menu-block">
+                <span>Add to Cart</span> 
+            </a>
+        </div>
+    </div>
+</section>
+<p-toast />

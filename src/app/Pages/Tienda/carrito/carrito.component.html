@@ -1,0 +1,22 @@
+<div class="arreglo">
+    <p-orderList 
+        [value]="products" 
+        [listStyle]="{ height: '70vh' }" 
+        header="Lista de Productos">
+            <ng-template let-product pTemplate="item">
+                <div class="carta">
+                    <div class="flex">
+                        <img src="{{product.pictureUrl}}" alt="">
+                        <div >
+                            <span>{{product.name}}</span>
+                            <br>
+                            <span> Cantidad: {{product.cantidad}}</span>
+                        </div>
+                    </div>
+                    
+                    <span>${{product.price}} CUP</span>
+                    <p-button icon="pi pi-trash" [rounded]="true" severity="help" [outlined]="true" (onClick)="deleteItem(product)"/>
+                </div>
+            </ng-template>
+    </p-orderList>
+</div>  <p-toast />

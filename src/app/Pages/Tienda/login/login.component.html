@@ -1,0 +1,96 @@
+<!-- <div class="contenedor">
+    <div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form [formGroup]="signForm" (ngSubmit)="onSign()">
+					<label for="chk" aria-hidden="true">Registrarse</label>
+					<input [class.invalid]="!signForm.value.displayName" formControlName="displayName" type="text" name="txt" placeholder="Nombre" >
+					<input [class.invalid]="!signForm.value.email" formControlName="email" type="email" name="email" placeholder="Email" >
+					<input (keyup)="CorrectPass()" [class.invalid]="!signForm.value.password" formControlName="password" type="password" name="pswd" placeholder="Contraseña" >
+					<p-progressBar [value]="value" showValue="false" [color]="color"/>
+					<button  type="submit" [disabled]="signForm.invalid">Unirse</button>
+				</form>
+			</div>
+
+			<div class="login">
+				<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+					<label for="chk" aria-hidden="true">Entrar</label>
+					<input [class.invalid]="!loginForm.value.email" formControlName="email" type="email" name="email" placeholder="Email" >
+					<input [class.invalid]="!loginForm.value.password" formControlName="password" type="password" name="pswd" placeholder="Contraseña" >
+					<button type="submit" [disabled]="loginForm.invalid">Iniciar</button>
+				</form>
+			</div>
+	</div>
+</div> -->
+
+<div class="contenedor">
+	<div class="marca">
+		<img style="width: 2rem; mix-blend-mode: darken;" src="assets/svg/iconbrand.jpg" alt="Brand">
+	</div>
+
+	<div class="contenido">
+		<div class="contenido1">
+			<div class="contenido2">
+				<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" [hidden]="login!==true"> 
+					<div class="mb1">
+						<div class="titulo">
+							Entrar al Bazaar
+						</div>
+					</div>
+					<div class="inputs mb-3">
+						<div class="input">
+							<div class="texto">
+								Email
+							</div>
+							<input formControlName="email" type="text" placeholder="Entra tu Email">
+						</div>
+						<div class="input">
+							<div class="texto">
+								Contraseña
+							</div>
+							<input formControlName="password" type="text" placeholder="Entra tu Contraseña">
+						</div>
+					</div>
+					<div class="botones">
+						<button type="submit" class="mb-2">Iniciar Sesión</button>
+						<div class="textos">No tiene una cuenta? <a (click)="login=false">Registrese</a></div>
+					</div>
+				</form>
+
+				<form [formGroup]="signForm" (ngSubmit)="onSign()" [hidden]="login!==false"> 
+					<div class="mb1">
+						<div class="titulo">
+							Registrarse en el Bazaar
+						</div>
+					</div>
+					<div class="inputs mb-3">
+						<div class="input">
+							<div class="texto">
+								Nombre
+							</div>
+							<input formControlName="displayName" type="text" placeholder="Entra tu Nombre">
+						</div>
+						<div class="input">
+							<div class="texto">
+								Email
+							</div>
+							<input formControlName="email" type="text" placeholder="Entra tu Email">
+						</div>
+						<div class="input">
+							<div class="texto">
+								Contraseña
+							</div>
+							<input (keyup)="CorrectPass()" formControlName="password" type="text" placeholder="Entra tu Contraseña">
+							<p-progressBar [value]="value" showValue="false" [color]="color"/>
+						</div>
+					</div>
+					<div class="botones">
+						<button type="submit" class="mb-2">Registrarse</button>
+						<div class="textos">Ya tiene una cuenta? <a (click)="login=true">Iniciar Sesión</a></div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

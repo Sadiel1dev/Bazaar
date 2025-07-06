@@ -1,0 +1,99 @@
+.contenedor{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #fff;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+}
+.imagen{
+    
+}
+img{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    max-width: 442px;
+    max-height: 442px;
+    border-radius: 20px;
+}
+.menu-block {
+    text-decoration: none;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25;
+    user-select: none;
+    white-space: nowrap;
+    text-align: center;
+    margin-left: 0;
+    padding: 0.65rem 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 158.33px;
+    background-color: #9165E1;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    span{
+      color: #fff;
+    }
+  }
+
+.compania{
+    font-size: 16px;
+    font-weight: bold;
+    color: #9165E1;
+}
+.titulo{
+    font-size: 37px;
+    font-weight: bold;
+    margin: 20px 0 40px
+}
+.descripcion{
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #e6e6e6;
+    max-width: 442px;
+}
+.actual{
+    font-weight: 700;
+    font-size: 25px;
+}
+.rebaja{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    border-radius: 10%;
+    height: 25px;
+    background-color: #9065e11f;
+    font-weight: 700;
+    color: #9165E1;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.anterior{
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff6b;
+    text-decoration: line-through;
+}
+.botones{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.letras{
+    padding: 15px;
+}

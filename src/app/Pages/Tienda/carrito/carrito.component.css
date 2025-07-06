@@ -1,0 +1,30 @@
+.arreglo{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.carta{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 370px;
+    align-items: center;
+    color: #E6E6E6;
+    justify-content: space-between;
+}
+img{
+    object-fit: cover;
+    width: 100px;
+    height: 90px;
+    border-radius: 8px;
+}
+@media (max-width: 600px) {
+    .carta {
+        width: 330px;
+    }
+}
+.flex{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

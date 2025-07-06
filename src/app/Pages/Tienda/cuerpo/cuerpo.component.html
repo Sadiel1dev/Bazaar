@@ -1,0 +1,123 @@
+<div class="container" style="margin-top: 120px;">
+
+     
+
+     <section id="rebaja" class="glass">
+        <div class="contenedor">
+            <div class="left">
+                <div class="content">
+                    <div class="titulos">
+                        Descarga nuestra app para conseguir regalos
+                    </div>
+                    <div class="subtitulo">
+                        Hasta un 20% de descuentos.
+                    </div>
+                </div>
+                <div class="boton">
+                    <a href="">Descargar Ahora</a>
+                </div>
+        
+            </div>
+            <div class="right">
+              
+                <div class="card">
+                  
+                  <div class="btn1"></div>
+                  <div class="btn2"></div>
+                  <div class="btn3"></div>
+                  <div class="btn4"></div>
+                  <div class="card-int">
+                    <div class="hello">Vamos
+                      <span class="hidden">Animate</span>
+                    </div>
+                  </div>
+                  <div class="top">
+                    <div class="camera">
+                      <div class="int"></div>
+                    </div>
+                    <div class="speaker"></div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        
+     </section>
+     <section id="margintop">
+        <div class="etiqueta">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" >
+                <path fill="url(#paint0_linear_713_51)" d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM10 18C12.1217 18 14.1566 17.1571 15.6569 15.6569C17.1571 14.1566 18 12.1217 18 10C18 7.87827 17.1571 5.84344 15.6569 4.34315C14.1566 2.84285 12.1217 2 10 2C7.87827 2 5.84344 2.84285 4.34315 4.34315C2.84285 5.84344 2 7.87827 2 10C2 12.1217 2.84285 14.1566 4.34315 15.6569C5.84344 17.1571 7.87827 18 10 18V18ZM10 5.05L14.95 10L10 14.95L5.05 10L10 5.05V5.05ZM10 7.879L7.879 10L10 12.121L12.121 10L10 7.879V7.879Z"></path>
+                <defs>
+                <linearGradient gradientUnits="userSpaceOnUse" y2="22.6007" x2="16.4204" y1="0" x1="0" id="paint0_linear_713_51">
+                <stop stop-color="#9165e1"></stop>
+                <stop stop-color="#9165e1" offset="0.5"></stop>
+                <stop stop-color="#9165e1" offset="1"></stop>
+                </linearGradient>
+                </defs>
+              </svg>
+              <span>Categorias</span>
+        </div>
+        <div class="titulo">
+            Buscar por Categoria
+        </div>
+        <ul class="filtros">
+            @for (item of types; track $index) {
+                <li (click)="SelectType(item.id)"  [class.active]="item.id===param.typeid"  style="background-color: #f2f2f2; border-radius: 5px;">
+                    <app-card  [nombre]="item.name" [imagen]="imagenes[$index]"></app-card>
+                </li>
+            }
+        </ul>
+
+     </section>
+      <section id="buscador" >
+        <div class="etiqueta">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" >
+                <path fill="url(#paint0_linear_713_51)" d="M10 20C4.477 20 0 15.523 0 10C0 4.477 4.477 0 10 0C15.523 0 20 4.477 20 10C20 15.523 15.523 20 10 20ZM10 18C12.1217 18 14.1566 17.1571 15.6569 15.6569C17.1571 14.1566 18 12.1217 18 10C18 7.87827 17.1571 5.84344 15.6569 4.34315C14.1566 2.84285 12.1217 2 10 2C7.87827 2 5.84344 2.84285 4.34315 4.34315C2.84285 5.84344 2 7.87827 2 10C2 12.1217 2.84285 14.1566 4.34315 15.6569C5.84344 17.1571 7.87827 18 10 18V18ZM10 5.05L14.95 10L10 14.95L5.05 10L10 5.05V5.05ZM10 7.879L7.879 10L10 12.121L12.121 10L10 7.879V7.879Z"></path>
+                <defs>
+                <linearGradient gradientUnits="userSpaceOnUse" y2="22.6007" x2="16.4204" y1="0" x1="0" id="paint0_linear_713_51">
+                <stop stop-color="#9165e1"></stop>
+                <stop stop-color="#9165e1" offset="0.5"></stop>
+                <stop stop-color="#9165e1" offset="1"></stop>
+                </linearGradient>
+                </defs>
+              </svg>
+              <span>Productos</span>
+        </div>
+        <div class="titulo">
+            Encuentra lo que Necesites
+        </div>
+        <div class="sticka">
+        <div class="filter" >
+            <span>Vistos <strong>{{(pagina+tomados)}}</strong> de <strong>{{totalCount}}</strong> Resultados</span>
+            <div class="search" >
+                <div class="form-control">
+                    <input class="input input-alt" #search placeholder="Buscar" id="buscador" type="text" (keyup)="onSearch()">
+                    <span class="input-border input-border-alt"></span>
+                  </div>
+                  <button class="menu-block" (click)="onSearch()">
+                    <i class='bx bx-search-alt'></i>
+                    </button>
+            </div>
+        </div>
+            
+                <p-paginator 
+            (onPageChange)="onPageChange($event)" 
+            [first]="first"
+            [rows]="rows" 
+            [totalRecords]="totalCount"/>
+            <div class="productos">
+               @for (item of productos; track $index) {
+                <app-producto  [producto]="item"></app-producto>
+               }
+            </div>
+            <p-paginator 
+            (onPageChange)="onPageChange($event)" 
+            [first]="first"
+            [rows]="rows" 
+            [totalRecords]="totalCount"  />
+            </div>
+            
+       
+       
+
+     </section>
+</div>

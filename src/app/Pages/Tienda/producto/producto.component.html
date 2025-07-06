@@ -1,0 +1,23 @@
+
+  <div class="product cardistri"  >
+      <div class="imagen" (click)="onSelected(producto.id)" >
+        <img src="{{producto.pictureUrl}}" alt="">
+      </div>
+    
+    <div class="info">
+      <div class="texto">
+        <span class="titulo">{{producto.name}}</span>
+        <span class="descripcion">{{producto.description}}</span>  
+      </div>
+      <div class="botones">
+        <div class="precio">
+          <span>PRICE</span>
+          <span class="dinero">${{producto.price}} CUP</span>
+        </div>
+        <button class="boton" (click)="addItemCarrito()">
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+  <p-toast />

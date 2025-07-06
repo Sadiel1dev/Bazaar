@@ -1,0 +1,76 @@
+.contenedor{
+  display: flex;
+  padding: 15px;
+  gap: 25px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.card {
+    width: 320px;
+    height: 350px;
+    padding: 20px;
+    color: white;
+    background: linear-gradient(#212121, #212121) padding-box,
+                linear-gradient(145deg, transparent 35%,#7d2ae8, #7d2ae8) border-box;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transform-origin: right bottom;
+  }
+  
+  .card .main-content {
+    flex: 1;
+  }
+  
+  .card .header span:first-child {
+    font-weight: 600;
+    color: #717171;
+    margin-right: 4px;
+  }
+  
+  .card .heading {
+    font-size: 35px;
+    font-weight: 600;
+    color: #9165e9;
+    margin-bottom: 0;
+  }
+  
+  .card .categories {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .card .categories span {
+    background-color: #9165e9;
+    padding: 4px 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 50em;
+  }
+  
+  .card .footer {
+    font-weight: 600;
+    color: #717171;
+    margin-right: 4px;
+  }
+  
+
+  .card:hover {
+  
+  }
+
+  .texto{
+    color: #e2e2e2e7;
+    margin-top: 35px;
+  }
+
+  .card .heading2 {
+    font-size: 16px;
+    color: #e2e2e2;
+  }
+
