@@ -6,7 +6,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 35px;
 }
 
 
@@ -104,7 +103,7 @@
   }
   
   .degradado{
-    background: linear-gradient(to bottom, transparent 40%, black );
+    background: linear-gradient(to bottom, transparent 20%, black);
     position:absolute ;
     z-index: -1;
     top: 0;
@@ -117,9 +116,16 @@
 
 @media (max-width:576px){
   .card {
-    width: 400px;
-    height: 200px;
+    width: 85%;
+    height: 250px;
   }
+  
+  .swiper{
+    height: 60%;
+}
+.degradado{
+    background: rgba(0,0,0, 0.6);
+}
 }
 .swiper-pagination{
   display: block;
@@ -131,4 +137,21 @@
   position: absolute;
   left: 48%;
   top: 0;
+}
+.btn-saber {
+  background: transparent;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  filter: drop-shadow(0 5px 15px #9165E1 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-saber:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 5px 15px #9165E1 );
 }

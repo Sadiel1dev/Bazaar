@@ -18,8 +18,6 @@ export function manejoerroresInterceptor(req: HttpRequest<unknown>, next: HttpHa
     catchError((Error:HttpErrorResponse)=>{
                   if(Error){
                     if (Error.status===0) {
-                        route.navigateByUrl('/error/0');
-                        console.log("funciona");
                     }
                     if (Error.status===401) {
                         if(Error.error.statusCode==401)

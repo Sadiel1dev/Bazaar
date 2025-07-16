@@ -32,7 +32,7 @@ var swiper = new Swiper(".mySwiper",{
     enabled: true,
     sticky: true,
   },
-  initialSlide:1,
+  initialSlide:0,
   parallax: true,
   slideToClickedSlide:true,
   shortSwipes:true,

@@ -1,5 +1,6 @@
 export const Constants={
     API_URL:'https://localhost:5006',
+    API_URL_TICKET:'http://localhost:5005',
     API_URLUSER:'http://localhost:5000',
     
     NOMENCLADORES:{

@@ -1,6 +1,7 @@
 
 <header class="header active" data-header>
   <nav class="navbar container">
+    <img class="imagenbrand" style="width: 2rem;" src="assets/svg/iconbrand-2.svg" alt="Brand">
     <a href="#" class="brand">DevsBazaar</a>
     <div class="burger" id="burger">
        <span class="burger-line"></span>
@@ -12,10 +13,11 @@
           <li class="menu-item"><a href="#" class="menu-link">Negocios</a></li>
           <li class="menu-item"><a [routerLink]="['/tienda']" routerLinkActive="router-link-active"  class="menu-link">Tienda</a></li>
           <li class="menu-item"><a href="#" class="menu-link">Servicios</a></li>
+          <li class="menu-item"><a [routerLink]="['/info','Consulta']" routerLinkActive="router-link-active"  class="menu-link">Consulta gratis</a></li>
           <li class="menu-item"><a href="#" class="menu-link">Contacto</a></li>
        </ul>
     </div>
-    <a href="#" class="menu-block">Unirse</a>
+    <a [routerLink]="['/login']" routerLinkActive="router-link-active" class="menu-block">Unirse</a>
  </nav>
 </header>
   <!--===== HOME =====-->
@@ -42,10 +44,10 @@
 
   <!--===== WORK =====-->
   <section class="section" id="work">
-    <h2 class="section-title" >Seguridad de nivel empresarial</h2>
+    <h2 class="section-title" >Servicios</h2>
     <p class="interesante">Valor</p>
     <div class="contenido" >
-    <app-seguridad></app-seguridad>
+    <app-proyectosh></app-proyectosh>
   </div>
   </section>
 
@@ -104,10 +106,10 @@
        
         <ul class="box">
           <li class="link_name">Otros servicios</li>
-          <li><a href="#">HTML & CSS</a></li>
-          <li><a href="#">JavaScript</a></li>
-          <li><a href="#">Photography</a></li>
-          <li><a href="#">Photoshop</a></li>
+          <li><a href="#">Desbloqueo de celulares</a></li>
+          <li><a href="#">Desbloqueo de contraseñas</a></li>
+          <li><a href="#">Marketing</a></li>
+          <li><a href="#">Ciber Seguridad</a></li>
         </ul>
         <ul class="box input-box">
         
@@ -136,7 +138,7 @@
     </div>
     <div class="bottom-details">
       <div class="bottom_text">
-        <span class="copyright_text">Copyright © 2024 <a href="#">DevBazaar </a>All rights reserved</span>
+        <span class="copyright_text">Copyright © 2025 <a href="#">DevBazaar </a>All rights reserved</span>
         <span class="policy_terms">
           <a href="#">Privacy policy</a>
           <a href="#">Terms & condition</a>

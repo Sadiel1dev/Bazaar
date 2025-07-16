@@ -1,0 +1,249 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .atras{
+            position: absolute;
+            left: 2%;
+            top: 2%;
+            z-index: 1;
+            background: linear-gradient(to right, #9165E1, #6a4ba3);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(145, 101, 225, 0.4);
+        }
+        .atras:hover{
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(145, 101, 225, 0.6);
+        }
+        .flex{
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(30, 30, 46, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(145, 101, 225, 0.3);
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 30px;
+            background: linear-gradient(to right, rgba(145, 101, 225, 0.3), rgba(30, 30, 46, 0.85));
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #9165E1, #6a4ba3);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #9165E1, #bda5f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #d0d0e0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .highlight {
+            color: #bda5f0;
+            font-weight: 600;
+        }
+
+        .form-container {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: #d0d0e0;
+            font-size: 1.1rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(20, 20, 35, 0.7);
+            border: 2px solid rgba(145, 101, 225, 0.2);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #9165E1;
+            box-shadow: 0 0 0 3px rgba(145, 101, 225, 0.3);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .file-upload {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .file-input {
+            padding: 40px 20px;
+            text-align: center;
+            border: 2px dashed rgba(145, 101, 225, 0.3);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-input:hover {
+            background: rgba(145, 101, 225, 0.1);
+            border-color: #9165E1;
+        }
+
+        .file-input i {
+            font-size: 2.5rem;
+            color: #9165E1;
+            margin-bottom: 15px;
+        }
+
+        .file-input p {
+            color: #a0a0c0;
+        }
+
+        .file-input input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background: linear-gradient(to right, #9165E1, #6a4ba3);
+            color: white;
+            border: none;
+            padding: 16px 30px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(145, 101, 225, 0.4);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(145, 101, 225, 0.6);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #a0a0c0;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 15px;
+            }
+            
+            header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .description {
+                font-size: 1rem;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+        }
+
+
+
+
+
+
+.ticket-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+.btn{
+    width: 25px;
+    height: 25px;
+}

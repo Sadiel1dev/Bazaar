@@ -1,0 +1,119 @@
+<div class="service-detail-container">
+  <!-- Encabezado con imagen destacada -->
+  <div class="service-header">
+    <div class="service-hero-image" [style.backgroundImage]="'url(' + service.featuredImage + ')'"></div>
+    <div class="service-overlay">
+      <h1 class="service-title">{{ service.title }}</h1>
+      <div class="service-meta">
+        <span class="service-category">{{ service.category }}</span>
+        <span class="service-rating">
+          <i class="fas fa-star" *ngFor="let star of [1,2,3,4,5]"></i>
+          ({{ service.reviews }} reseñas)
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Galería de imágenes -->
+  <div class="service-gallery">
+    <h2 class="gallery-title">Galería del Producto</h2>
+    <div class="gallery-grid">
+      <div *ngFor="let image of service.images" class="gallery-item">
+        <img [src]="image" alt="Imagen del servicio" (click)="openLightbox(image)">
+      </div>
+    </div>
+  </div>
+
+  <!-- Detalles principales -->
+  <div class="service-content">
+    <div class="service-description">
+      <h2>Descripción del Servicio</h2>
+      <p>{{ service.description }}</p>
+      
+      <div class="features-grid">
+        <div *ngFor="let feature of service.features" class="feature-card">
+          <i class="feature-icon" [class]="feature.icon"></i>
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel lateral de contacto/resumen -->
+    <div class="service-sidebar">
+      <div class="summary-card">
+        <div class="price-section">
+          <span class="original-price" *ngIf="service.discount">{{ service.price | currency }}</span>
+          <span class="current-price">{{ service.discountPrice | currency }}</span>
+          <span class="discount-badge" *ngIf="service.discount">{{ service.discount }}% OFF</span>
+        </div>
+        
+        <div class="delivery-info">
+          <i class="fas fa-shipping-fast"></i>
+          <span>Envío gratis a todo el país</span>
+        </div>
+        
+        <div class="stock-info">
+          <i class="fas fa-box-open"></i>
+          <span *ngIf="service.stock > 0" class="in-stock">Disponible ({{ service.stock }} unidades)</span>
+          <span *ngIf="service.stock <= 0" class="out-of-stock">Agotado temporalmente</span>
+        </div>
+        
+        <div class="action-buttons">
+          
+          <button class="btn-whatsapp" (click)="contactWhatsApp()">
+            <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+          </button>
+        </div>
+      </div>
+      
+      <div class="seller-info">
+        <div class="seller-header">
+          <img [src]="service.seller.avatar" alt="Vendedor" class="seller-avatar">
+          <div>
+            <h3>{{ service.seller.name }}</h3>
+            <div class="seller-rating">
+              <i class="fas fa-star" *ngFor="let star of [1,2,3,4,5]"></i>
+              {{ service.seller.rating }} ({{ service.seller.reviews }} ventas)
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-options">
+          <button class="btn-contact">
+            <i class="fas fa-envelope ico"></i> Enviar mensaje
+          </button>
+          <button class="btn-contact">
+            <i class="fas fa-phone-alt"></i> Llamar al vendedor
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reseñas de clientes -->
+  <div class="service-reviews">
+    <h2>Reseñas de clientes</h2>
+    <div class="review-cards">
+      <div *ngFor="let review of service.reviewsList" class="review-card">
+        <div class="review-header">
+          <img [src]="review.user.avatar" alt="Usuario" class="review-avatar">
+          <div>
+            <h3>{{ review.user.name }}</h3>
+            <div class="review-rating">
+              <i class="fas fa-star" *ngFor="let star of getStars(review.rating)"></i>
+            </div>
+          </div>
+        </div>
+        <p class="review-content">{{ review.content }}</p>
+        <span class="review-date">{{ review.date | date }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox para imágenes -->
+<div *ngIf="lightboxOpen" class="lightbox" (click)="closeLightbox()">
+  <img [src]="selectedImage" alt="Imagen ampliada">
+  <button class="lightbox-close"><i class="fas fa-times"></i></button>
+</div>

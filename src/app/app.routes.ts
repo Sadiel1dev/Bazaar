@@ -11,11 +11,14 @@ import { Error0Component } from './Pages/Error/error0/error0.component';
 import { CarritoComponent } from './Pages/Tienda/carrito/carrito.component';
 import { LoginComponent } from './Pages/Tienda/login/login.component';
 import { RegisterComponent } from './Pages/Tienda/register/register.component';
+import { InformacionComponent } from './Pages/Presentacion/informacion/informacion.component';
 
 export const routes: Routes = [
+    {path:"" ,component:LandingPageComponent},
     {path:"login" ,component:LoginComponent},
     {path:"register" ,component:RegisterComponent},
-    {path:"" ,component:LandingPageComponent},
+    {path:"info/:id" ,component:InformacionComponent, 
+        runGuardsAndResolvers: 'always',},
     {path:"error",
         component:ErrortestComponent,
         children: [
