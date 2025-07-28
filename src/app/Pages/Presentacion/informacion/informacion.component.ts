@@ -5,6 +5,7 @@ import { TicketCreateDto } from '../../../Core/Models/Interface/ticket';
 import { TicketService } from '../../../Core/Services/ticket.service';
 import { NgFor, NgIf } from '@angular/common';
 import { EcommercedetailComponent } from "../ecommercedetail/ecommercedetail.component";
+import { Constants } from '../../../Core/Constant/Constant';
 
 @Component({
   selector: 'app-informacion',
@@ -20,6 +21,7 @@ export class InformacionComponent implements OnInit{
   selectedFiles: File[] = [];
   maxFileSizeMB = 5;
   allowedFileTypes = ['image/jpeg', 'image/png'];
+  datos: any;
 
 constructor(private fb: FormBuilder, private ticketService:TicketService, private route: ActivatedRoute,private router:Router) {
  this.ticketForm = this.fb.group({
@@ -47,9 +49,39 @@ constructor(private fb: FormBuilder, private ticketService:TicketService, privat
       imagenes: [null]
     });
 }
+
 ngOnInit() {
   this.parametro = this.route.snapshot.paramMap.get('id');
   this.scrollToTop()
+  this.obtenerDatos(this.parametro)
+}
+obtenerDatos(dato:any){
+  switch (dato) {
+    case 'Ecommerce':
+            this.datos=Constants.EcommerceDetail;
+      break;
+      case 'Catalogo':
+            this.datos=Constants.CatalogAppDetail;
+      break;
+      case 'Reservacion':
+            this.datos=Constants.ReservationAppDetail;
+      break;
+      case 'Personalizado':
+            this.datos=Constants.CustomAppDetail;
+      break;
+      case 'Reparacion':
+            this.datos=Constants.RepairServiceDetail;
+      break;
+      case 'Mantenimiento':
+            this.datos=Constants.MaintenanceServiceDetail;
+      break;
+      case 'Utilidades':
+            this.datos=Constants.UtilitiesServiceDetail;
+      break;
+  
+    default:
+      break;
+  }
 }
 scrollToTop(): void {
   window.scrollTo({ top: 0, behavior: 'smooth' });

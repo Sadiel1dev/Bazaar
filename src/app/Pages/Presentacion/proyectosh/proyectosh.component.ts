@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -6,7 +6,8 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './proyectosh.component.html',
-  styleUrl: './proyectosh.component.css'
+  styleUrl: './proyectosh.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProyectoshComponent {
 

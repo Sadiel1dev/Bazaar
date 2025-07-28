@@ -12,17 +12,22 @@ import { ContactoComponent } from "../contacto/contacto.component";
 import { TopComponent } from "../top/top.component";
 import { RouterLink } from '@angular/router';
 import { ProyectoshComponent } from "../proyectosh/proyectosh.component";
+import { CarouselComponent } from "../../../Shared/ReusableComponents/carousel/carousel.component";
+import { Platform } from '@angular/cdk/platform';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [RouterLink, CommonModule, HeroComponent, SkillsComponent, ScrollComponent, SeguridadComponent, VentajasComponent, PrecioComponent, AplicationComponent, ProyectosComponent, ContactoComponent, TopComponent, ProyectoshComponent],
+  imports: [RouterLink, CommonModule, HeroComponent, VentajasComponent, PrecioComponent, AplicationComponent, ProyectosComponent, ContactoComponent, TopComponent, ProyectoshComponent, CarouselComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
 export class LandingPageComponent implements OnInit{
    
   expression=false;
+  isAndroid:boolean=false;
+ constructor(public platform: Platform) {
+  }
     abrir():void {
       if(this.expression==false){
         this.expression=true;
@@ -32,6 +37,7 @@ export class LandingPageComponent implements OnInit{
     
    }
    ngOnInit(): void {
+    this.isAndroid=this.platform.ANDROID;
       if (!localStorage.getItem('recargado')) {
     localStorage.setItem('recargado', 'true');
     window.location.reload();
@@ -39,4 +45,9 @@ export class LandingPageComponent implements OnInit{
       localStorage.removeItem('recargado');
     }
    }
+   getWhatsAppLink(): string {
+  const phoneNumber = '+5352529615'; // Reemplaza con tu número (sin +)
+  const message = encodeURIComponent('Hola, estoy interesado en tus servicios');
+  return `https://wa.me/${phoneNumber}?text=${message}`;
+}
 }

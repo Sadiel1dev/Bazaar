@@ -12,6 +12,7 @@ import { CarritoComponent } from './Pages/Tienda/carrito/carrito.component';
 import { LoginComponent } from './Pages/Tienda/login/login.component';
 import { RegisterComponent } from './Pages/Tienda/register/register.component';
 import { InformacionComponent } from './Pages/Presentacion/informacion/informacion.component';
+import { MainPageComponent } from './Pages/Landing/main-page/main-page.component';
 
 export const routes: Routes = [
     {path:"" ,component:LandingPageComponent},

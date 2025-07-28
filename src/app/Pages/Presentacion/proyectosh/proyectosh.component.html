@@ -24,7 +24,7 @@
                     <div class="degradado"></div>
                   <p class="card__title">Reparacion</p>
                   <p class="card__description">Diagnóstico y reparación profesional para dispositivos dañados o lentos. Solicita una cita o contactanos por redes.</p>
-                  <button class="btn-saber">Saber mas...</button>
+                  <button class="btn-saber" [routerLink]="['/info','Reparacion']" routerLinkActive="router-link-active" >Saber mas...</button>
                   <div class="degradado"></div>
                 </div>
              
@@ -35,7 +35,7 @@
                 <div class="card__content">
                   <p class="card__title">Mantenimiento</p>
                   <p class="card__description">Evita fallas antes de que ocurran. Revisamos tu dispositivo, optimizamos rendimiento y prolongamos su vida útil.</p>
-                  <button class="btn-saber">Saber mas...</button>
+                  <button class="btn-saber" [routerLink]="['/info','Mantenimiento']" routerLinkActive="router-link-active" >Saber mas...</button>
                   <div class="degradado"></div>
                 </div>
               
@@ -47,7 +47,7 @@
             <div class="card__content">
               <p class="card__title">Utilidades</p>
               <p class="card__description">Actualizamos y configuramos software esenciales. Mejora rendimiento, compatibilidad y estabilidad con nuestra ayuda técnica.</p>
-              <button class="btn-saber">Saber mas...</button>
+              <button class="btn-saber" [routerLink]="['/info','Utilidades']" routerLinkActive="router-link-active" >Saber mas...</button>
               <div class="degradado"></div>
             </div>
           

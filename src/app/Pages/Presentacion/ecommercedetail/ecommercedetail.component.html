@@ -19,7 +19,7 @@
     <h2 class="gallery-title">Galería del Producto</h2>
     <div class="gallery-grid">
       <div *ngFor="let image of service.images" class="gallery-item">
-        <img [src]="image" alt="Imagen del servicio" (click)="openLightbox(image)">
+        <img [src]="image" alt="Imagen del servicio" (click)="openLightbox(image)" loading="lazy">
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@
         
         <div class="delivery-info">
           <i class="fas fa-shipping-fast"></i>
-          <span>Envío gratis a todo el país</span>
+          <span>Cita personal solo en La Habana</span>
         </div>
         
         <div class="stock-info">
@@ -69,7 +69,7 @@
       
       <div class="seller-info">
         <div class="seller-header">
-          <img [src]="service.seller.avatar" alt="Vendedor" class="seller-avatar">
+          <img [src]="service.seller.avatar" alt="Vendedor" class="seller-avatar" loading="lazy">
           <div>
             <h3>{{ service.seller.name }}</h3>
             <div class="seller-rating">
@@ -97,11 +97,11 @@
     <div class="review-cards">
       <div *ngFor="let review of service.reviewsList" class="review-card">
         <div class="review-header">
-          <img [src]="review.user.avatar" alt="Usuario" class="review-avatar">
+          <img [src]="review.user.avatar" alt="Usuario" class="review-avatar" loading="lazy">
           <div>
             <h3>{{ review.user.name }}</h3>
             <div class="review-rating">
-              <i class="fas fa-star" *ngFor="let star of getStars(review.rating)"></i>
+              <i class="fas fa-star" *ngFor="let star of review.starsArray"></i>
             </div>
           </div>
         </div>
@@ -114,6 +114,6 @@
 
 <!-- Lightbox para imágenes -->
 <div *ngIf="lightboxOpen" class="lightbox" (click)="closeLightbox()">
-  <img [src]="selectedImage" alt="Imagen ampliada">
+  <img [src]="selectedImage" alt="Imagen ampliada" loading="lazy">
   <button class="lightbox-close"><i class="fas fa-times"></i></button>
 </div>

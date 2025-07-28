@@ -8,7 +8,24 @@
    $warning:   #facc15
    $danger:    #f87171
 */
-
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+  }
+}
 .service-detail-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -280,7 +297,7 @@
 .service-sidebar .seller-info .seller-header .seller-avatar {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
+  padding: 5px;
   object-fit: cover;
 }
 
