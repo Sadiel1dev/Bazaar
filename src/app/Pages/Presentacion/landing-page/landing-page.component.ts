@@ -29,23 +29,62 @@ export class LandingPageComponent implements OnInit{
   isAndroid:boolean=false;
  constructor(public platform: Platform) {
   }
-    abrir():void {
-      if(this.expression==false){
-        this.expression=true;
-      }else{
-        this.expression=false;
-      }
-    
-   }
+  
+  //   abrir():void {
+  //     if(this.expression==false){
+  //       this.expression=true;
+  //     }else{
+  //       this.expression=false;
+  //     }
+  //  }
+
    ngOnInit(): void {
-    this.isAndroid=this.platform.ANDROID;
-    //   if (!localStorage.getItem('recargado')) {
-    // localStorage.setItem('recargado', 'true');
-    // window.location.reload();
-    // } else {
-    //   localStorage.removeItem('recargado');
-    // }
-   }
+     this.isAndroid=this.platform.ANDROID;
+  const header = document.querySelector("[data-header]") as HTMLElement;
+  const navbarMenu = document.getElementById("menu") as HTMLElement;
+  const burgerMenu = document.getElementById("burger") as HTMLElement;
+  const headerMenu = document.getElementById("header") as HTMLElement;
+
+  const activeEl = () => {
+    if (window.scrollY > 100) {
+      header?.classList.add("active");
+    } else {
+      header?.classList.remove("active");
+    }
+  };
+
+  window.addEventListener("scroll", activeEl);
+
+  if (burgerMenu && navbarMenu) {
+    burgerMenu.addEventListener("click", () => {
+      burgerMenu.classList.toggle("is-active");
+      navbarMenu.classList.toggle("is-active");
+    });
+  }
+
+  document.querySelectorAll(".menu-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      burgerMenu?.classList.remove("is-active");
+      navbarMenu?.classList.remove("is-active");
+    });
+  });
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY >= 85) {
+      headerMenu?.classList.add("on-scroll");
+    } else {
+      headerMenu?.classList.remove("on-scroll");
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      if (navbarMenu?.classList.contains("is-active")) {
+        navbarMenu.classList.remove("is-active");
+      }
+    }
+  });
+}
    getWhatsAppLink(): string {
   const phoneNumber = '+5352529615'; // Reemplaza con tu número (sin +)
   const message = encodeURIComponent('Hola, estoy interesado en tus servicios');
