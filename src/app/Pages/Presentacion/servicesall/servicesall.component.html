@@ -1,0 +1,96 @@
+<div class="services-grid">
+    <div [routerLink]="['/info','Consulta']" routerLinkActive="router-link-active" class="service-card" style="background-image: url(assets/img/Consulta.webp);">
+        <h3>Consulta Gratis</h3>
+    </div>
+    <div [routerLink]="['/info','Reparacion']" routerLinkActive="router-link-active" class="service-card" style="background-image: url(assets/img/Reparacion.webp);">
+        <h3>Reparacion</h3>
+    </div>
+    <div [routerLink]="['/info','Mantenimiento']" routerLinkActive="router-link-active" class="service-card" style="background-image: url(assets/img/Mantenimiento.webp);">
+        <h3>Mantenimiento</h3>
+    </div>
+    <div [routerLink]="['/info','Utilidades']" routerLinkActive="router-link-active" class="service-card" style="background-image: url(assets/img/Utilidades.webp);">
+        <h3>Utilidades</h3>
+    </div>
+    <div [routerLink]="['/info','Ecommerce']" routerLinkActive="router-link-active" class="service-card" style="background-image: url(assets/img/e4.webp);">
+        <h3>Ecommerce</h3>
+    </div>
+    <div [routerLink]="['/info','Catalogo']" routerLinkActive="router-link-active" class="service-card" style="background-image: url(assets/img/c1.webp);">
+        <h3>Catalogo</h3>
+    </div>
+    <div [routerLink]="['/info','Reservacion']" routerLinkActive="router-link-active" class="service-card" style="background-image: url(assets/img/r1.webp);">
+        <h3>Automatizacion</h3>
+    </div>
+    <div [routerLink]="['/info','Personalizado']" routerLinkActive="router-link-active" class="service-card" style="background-image: url(assets/img/u2.webp);">
+        <h3>Personalizado</h3>
+    </div>
+</div>
+
+<style>
+.services-grid {
+    display: grid;
+    grid-template-columns:  repeat(4, 300px);
+    grid-template-rows: repeat(2, 220px);
+   
+}
+.service-card {
+    background-size: cover;
+    background-position: center;
+    
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    cursor: pointer;
+}
+.service-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:rgba(0,0,0,0.35);
+    
+    pointer-events: none;
+}
+.service-card h3 {
+    position: relative;
+    z-index: 1;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #e2e2e2;
+    margin: 1.2rem;
+    text-align: center;
+    background: rgba(0,0,0,0.35);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+.service-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, calc(100%/2));
+        grid-template-rows: repeat(4, 180px);
+    }
+}
+@media (max-width: 1100px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 220px);
+        grid-template-rows: repeat(3, 180px);
+    }
+}
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: repeat(2, calc(100%/2));
+        grid-template-rows: repeat(4, 140px);
+    }
+    .service-card h3 {
+        margin: 0.7rem;
+        font-size: 1rem;
+        padding: 0.4rem 0.7rem;
+    }
+}
+</style>
