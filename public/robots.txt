@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tdevbazaar.github.io/Bazaar/sitemap.xml
